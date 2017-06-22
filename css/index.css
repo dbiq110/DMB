@@ -1,19 +1,51 @@
 /*��������ʽ����*/
+body {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  color: #28c7ff;
+}
 .myNav {
   position: fixed;
-  z-index: 999;
-  height: 80px;
+  z-index: 99;
   border: none;
   margin-bottom: 0;
   background-color: rgba(10, 10, 0, 0.7);
   width: 100%;
 }
+.myNav .container .navbar-header > h1.H1title {
+  text-indent: -99999px;
+  position: absolute;
+}
 .myNav .container .navbar-header .myBrand {
   background: rgba(68, 55, 28, 0.7);
-  height: 78px;
+  height: 100%;
 }
-.myNav .container .navbar-collapse > .nav {
-  height: 78px;
+@media screen and (max-width: 768px) {
+  .myNav .container .navbar-header .myBrand {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .myNav .container .navbar-header {
+    height: 44px;
+  }
+}
+.myNav .container .navbar-header > .navbar-toggle {
+  margin-bottom: 0;
+}
+.myNav .container .navbar-header > .nav_jianli {
+  color: #ff9;
+  background-color: transparent;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .myNav .container .navbar-header > .nav_jianli {
+    font-size: 40px;
+    line-height: 78px;
+  }
 }
 .myNav .container .navbar-collapse > .nav > li {
   height: 100%;
@@ -23,7 +55,7 @@
 }
 .myNav .container .navbar-collapse > .nav > li > a {
   height: 100%;
-  line-height: 58px;
+  line-height: 50px;
   color: #fff;
 }
 .myNav .container .navbar-collapse > .nav > .active > a {
@@ -31,44 +63,78 @@
   color: #28c7ff;
 }
 /*Ʈ������Ҷ������Ч*/
-.leaf-scene {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  transform-style: preserve-3d;
-}
-.leaf-scene div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background: url('../images/leaf4.png') no-repeat center;
-  background-size: 100%;
-  transform-style: preserve-3d;
-  backface-visibility: visible;
-  box-shadow: 1px 3px -3px 3px -3px #ffffff;
-  border-radius: 50%;
-}
-/*fullpage������ʽ����*/
-.fp-controller .fp-controller-dotted {
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
 #sectionContent {
   /*��ҳ��ʽ����*/
+  height: 100%;
 }
 #sectionContent > .fp-section:nth-of-type(1) {
   background: url("../images/section1.jpg") no-repeat center;
   background-size: cover;
 }
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar {
+  padding-top: 100px;
+}
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox {
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 50%;
+  height: 350px;
+  /*ͷ������*/
+}
+@media screen and (max-width: 768px) {
+  #sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox {
+    width: 100%;
+    height: 100%;
+  }
+}
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > #avatar {
+  margin: 0 auto;
+  width: 240px;
+}
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox {
+  width: 350px;
+  margin: 0 auto;
+}
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox > .myName {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: #28c7ff;
+}
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox > .myName:hover {
+  font-size: 40px;
+  border-bottom: 1px solid #fff;
+}
+#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox > .myName > span {
+  color: #fff;
+}
 #sectionContent > .fp-section:nth-of-type(2) {
   background: url("../images/chun2._bg.jpg") no-repeat center;
   background-size: cover;
+}
+#sectionContent > .fp-section:nth-of-type(2) > .experience {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+  padding-bottom: 10px;
+  background-color: rgba(10, 10, 0, 0.5);
+}
+@media screen and (min-width: 768px) {
+  #sectionContent > .fp-section:nth-of-type(2) > .experience {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+#sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox {
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  #sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox {
+    height: 240px;
+  }
+}
+#sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox > h3 {
+  color: #fff;
 }
 #sectionContent > .fp-section:nth-of-type(3) {
   background: url("../images/xia_bg2.jpg") no-repeat center;
@@ -81,4 +147,24 @@
 #sectionContent > .fp-section:nth-of-type(5) {
   background: url("../images/section3.jpg") no-repeat center;
   background-size: cover;
+}
+/*fullpage������ʽ����*/
+.fp-controller .fp-controller-dotted {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/*Ʈ����Ҷ����ʽ����*/
+.myLeaf {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: url('../images/leaf4.png') no-repeat center;
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  box-shadow: 1px 3px -3px 3px -3px #ffffff;
 }

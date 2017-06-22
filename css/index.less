@@ -1,24 +1,59 @@
 @baseColor:#28c7ff;
+@boxColor:rgba(10, 10, 0, 0.5);
+//@baseColor:#a69;
+
 /*导航条样式设计*/
+body{
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  color:@baseColor
+}
 .myNav{
   position: fixed;
-  z-index: 999;
-  height: 80px;
+  z-index: 99;
+  //top:0;
+  //left:0;
   border: none;
   margin-bottom:0;
   background-color:rgba(10,10,0,.7);
   width: 100%;
   .container{
     .navbar-header{
+      >h1.H1title{
+        text-indent: -99999px;
+        position: absolute;
+      }
       .myBrand{
         background: rgba(68,55,28,.7);
-        height: 78px;
+        height: 100%;
+        @media screen and(max-width: 768px){
+          padding: 0;
+        }
+      }
+      @media screen and(max-width: 768px){
+        height: 44px;
+      }
+      >.navbar-toggle{
+        margin-bottom: 0;
+      }
+      >.nav_jianli{
+        color:#ff9;
+        background-color: transparent;
+        font-size: 20px;
+        line-height: 40px;
+        margin-left: 20px;
+        @media screen and (min-width: 768px){
+          font-size: 40px;
+          line-height: 78px;
+
+        }
       }
     }
     .navbar-collapse{
       >.nav{
-        height: 78px;
-
+        //height: 78px;
+        //height: 100px;
         >li{
           height: 100%;
         &:hover{
@@ -26,7 +61,7 @@
         }
           >a{
             height: 100%;
-            line-height: 58px;
+            line-height: 50px;
             color:#fff;
           }
         }
@@ -42,54 +77,98 @@
   }
 }
 /*飘舞的树叶背景特效*/
-.leaf-scene {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  transform-style: preserve-3d;
 
-  div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background: url('../images/leaf4.png') no-repeat center;
 
-    background-size: 100%;
-    transform-style: preserve-3d;
-    backface-visibility: visible;
-    box-shadow: 1px 3px -3px 3px -3px rgba(255,255,255,1);
-    border-radius: 50%;
-  }
-}
-/*fullpage滚屏样式设计*/
-.fp-controller{
-  .fp-controller-dotted{
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
-    background-color: rgba(255, 255, 255, .5);
-  }
-}
+
 #sectionContent{
   /*首页样式设计*/
+  //position: relative;
+  //width: 100%;
+  //position: fixed;
+  //z-index: 9;
+  height: 100%;
+
   >.fp-section:nth-of-type(1){
     background:url("../images/section1.jpg") no-repeat center;
     background-size: cover;
-    >.myAvatar{
+    >.introduction{
+      >.myAvatar{
 
+        padding-top: 100px;
+        .myBox{
+          //width: 80%;
+          margin:0 auto;
+          border-radius: 10px;
+          //background-color: rgba(10, 10, 0, 0.5);
+          width: 50%;
+          height: 350px;
+          @media screen and (max-width: 768px){
+            width: 100%;
+            height:100%;
+          }
+          /*头像设计*/
+          >#avatar{
+            margin:0 auto;
+            width: 240px;
+
+            //border:1px solid #ccc;
+            //background-color: #ccc;
+          }
+          >.nameBox{
+            width: 350px;
+            margin:0 auto;
+            >.myName{
+              font-size: 30px;
+              text-align: center;
+              font-weight: 700;
+              //color: #775D67;
+              color: @baseColor;
+              &:hover{
+                font-size: 40px;
+                border-bottom: 1px solid #fff;
+                //text-align: right;
+              }
+              >span{
+                //color: #f82;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
     }
+
   }
   >.fp-section:nth-of-type(2){
     background:url("../images/chun2._bg.jpg") no-repeat center;
     background-size: cover;
+    >.experience{
+      margin-top: 80px;
+      margin-bottom:80px;
+      text-align: center;
+      padding-bottom: 10px;
+      background-color: @boxColor;
+      @media screen and (min-width: 768px) {
+        margin-top: 100px;
+        margin-bottom:100px;
+      }
+      >.myBox{
+        margin-top: 20px;
+        @media screen and (min-width: 768px){
+        height: 240px;
+        }
+
+        >h3{
+          color:#fff;
+
+        }
+      }
+    }
   }
   >.fp-section:nth-of-type(3){
     background:url("../images/xia_bg2.jpg") no-repeat center;
     background-size: cover;
+
   }
   >.fp-section:nth-of-type(4){
     background:url("../images/section2_big.jpg") no-repeat center;
@@ -100,5 +179,31 @@
     background:url("../images/section3.jpg") no-repeat center;
     background-size: cover;
   }
+}
+
+/*fullpage滚屏样式设计*/
+.fp-controller{
+  .fp-controller-dotted{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
+/*飘落的叶子样式设计*/
+.myLeaf {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: url('../images/leaf4.png') no-repeat center;
+
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  box-shadow: 1px 3px -3px 3px -3px rgba(255,255,255,1);
+  //border-radius: 50%;
+  //}
 }
 

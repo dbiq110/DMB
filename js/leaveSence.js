@@ -1,11 +1,11 @@
 //初始化树叶场景的对象
 var LeafScene = function(el) {
     this.viewport = el;
-    this.world = document.createElement('div');
+    //this.world = document.createElement('div');
     this.leaves = [];
 
     this.options = {
-        numLeaves: 30,
+        numLeaves: 20,
         wind: {
             magnitude: 1.2,
             maxSpeed: 12,
@@ -29,7 +29,7 @@ var LeafScene = function(el) {
         leaf.y = -10;
         leaf.z = Math.random()*200;
         if (leaf.x > this.width) {
-            leaf.x = this.width - 10;
+            leaf.x = this.width;
             leaf.y = Math.random()*this.height/2;
         }
         //if (leaf.x > 0) {
@@ -138,17 +138,18 @@ LeafScene.prototype.init = function() {
         };
         this._resetLeaf(leaf);
         this.leaves.push(leaf);
-        this.world.appendChild(leaf.el);
+        //this.world.appendChild(leaf.el);
+        this.viewport.appendChild(leaf.el);
     }
 
-    this.world.className = 'leaf-scene';
-    this.viewport.appendChild(this.world);
+    //this.world.className = 'leaf-scene';
+    //this.viewport.appendChild(this.world);
 
     // set perspective
-    this.world.style.webkitPerspective = "400px";
-    this.world.style.MozPerspective = "400px";
-    this.world.style.oPerspective = "400px";
-    this.world.style.perspective = "400px";
+    //this.world.style.webkitPerspective = "400px";
+    //this.world.style.MozPerspective = "400px";
+    //this.world.style.oPerspective = "400px";
+    //this.world.style.perspective = "400px";
 
     // reset window height/width on resize
     var self = this;
