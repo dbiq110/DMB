@@ -5,7 +5,7 @@ var LeafScene = function(el) {
     this.leaves = [];
 
     this.options = {
-        numLeaves: 20,
+        numLeaves: 5,
         wind: {
             magnitude: 1.2,
             maxSpeed: 12,

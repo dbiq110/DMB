@@ -18,6 +18,7 @@ body{
   margin-bottom:0;
   background-color:rgba(10,10,0,.7);
   width: 100%;
+
   .container{
     .navbar-header{
       >h1.H1title{
@@ -25,7 +26,7 @@ body{
         position: absolute;
       }
       .myBrand{
-        background: rgba(68,55,28,.7);
+        //background: rgba(68,55,28,.7);
         height: 100%;
         @media screen and(max-width: 768px){
           padding: 0;
@@ -42,9 +43,9 @@ body{
         background-color: transparent;
         font-size: 20px;
         line-height: 40px;
-        margin-left: 20px;
+        margin-left: 10px;
         @media screen and (min-width: 768px){
-          font-size: 40px;
+          font-size: 30px;
           line-height: 78px;
 
         }
@@ -63,6 +64,7 @@ body{
             height: 100%;
             line-height: 50px;
             color:#fff;
+            font-size: 14px;
           }
         }
         >.active{
@@ -89,8 +91,8 @@ body{
   height: 100%;
 
   >.fp-section:nth-of-type(1){
-    background:url("../images/section1.jpg") no-repeat center;
-    background-size: cover;
+    position: relative;
+    background:url("../images/section1_2.jpg") no-repeat center;
     >.introduction{
       >.myAvatar{
 
@@ -115,47 +117,93 @@ body{
             //background-color: #ccc;
           }
           >.nameBox{
-            width: 350px;
+            width: 280px;
             margin:0 auto;
             >.myName{
-              font-size: 30px;
-              text-align: center;
+              font-size: 24px;
+              text-align: left;
               font-weight: 700;
               //color: #775D67;
               color: @baseColor;
+
               &:hover{
-                font-size: 40px;
+                font-size: 30px;
                 border-bottom: 1px solid #fff;
-                //text-align: right;
+
               }
               >span{
                 //color: #f82;
+                text-align: right;
                 color: #fff;
               }
             }
           }
         }
       }
+      >.s1_title{
+        margin-top: -100px;
+        font-size: 50px;
+        >span{
+          color:#FF9
+        }
+        color:@baseColor;
+        text-align: center;
+        @media screen and (max-width: 768px){
+          margin-top: 100px;
+        }
+      }
+      >.textBox{
+        //margin:0 auto;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        text-align: center;
+        color:#FFF;
+        font-size: 18px;
+      }
     }
-
   }
+  /*个人经历样式*/
   >.fp-section:nth-of-type(2){
     background:url("../images/chun2._bg.jpg") no-repeat center;
     background-size: cover;
     >.experience{
       margin-top: 80px;
-      margin-bottom:80px;
+      margin-bottom:0px;
       text-align: center;
-      padding-bottom: 10px;
-      background-color: @boxColor;
+      padding-bottom: 80px;
+
+      height: 100%;
       @media screen and (min-width: 768px) {
         margin-top: 100px;
         margin-bottom:100px;
       }
       >.myBox{
-        margin-top: 20px;
+        background-color: @boxColor;
+        box-sizing: border-box;
+        //line-height: 100%;
+        padding: 4px;
+        >h3{
+          >p{
+            color:#ff9;
+          }
+        }
         @media screen and (min-width: 768px){
-        height: 240px;
+          height: 28%;
+          font-size: 20px;
+
+          >h3{
+            position: relative;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            >p{
+              font-size: 16px;
+
+            }
+          }
         }
 
         >h3{
@@ -165,6 +213,7 @@ body{
       }
     }
   }
+  /*技能掌握样式*/
   >.fp-section:nth-of-type(3){
     background:url("../images/xia_bg2.jpg") no-repeat center;
     background-size: cover;
