@@ -139,10 +139,9 @@ body {
   background-size: cover;
 }
 #sectionContent > .fp-section:nth-of-type(2) > .experience {
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 0px;
   text-align: center;
-  padding-bottom: 80px;
   height: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -169,6 +168,17 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+  #sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox > h3 > p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox {
+    height: 10%;
+  }
+  #sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox > h3 {
+    font-size: 18px;
   }
   #sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox > h3 > p {
     font-size: 16px;
