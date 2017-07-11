@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="mychart" style="width: 1000px;height:500px;"></div>
+<div id="mychart3" style="width: 1000px;height:500px;"></div>
+<div id="mychart2" style="width: 1000px;height:500px;"></div>
+<!--<script src="js/require.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('mychart'));
+    var myChart3 = echarts.init(document.getElementById('mychart3'));
+    var myChart2 = echarts.init(document.getElementById('mychart2'));
+    $.ajax({
+        type:'get',
+        url:'./json/skills.json',
+        success: function (data) {
+            var option = {
+                title : {
+                    text: '掌握技能'
+                },
+                tooltip : {
+                },
+                legend: {
+                    data:['html','css','javascript']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false}
+                    }
+                },
+                calculable : false,
+                xAxis : [
+                    {
+                        type : 'value',
+//                        boundaryGap : [0, 0.01],
+                        show:false,
+
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'category',
+                        data :data.mainSkill.title,
+//                        boundaryGap : [0, 0.01],
+//                        show:false,
+                        axisTick:{
+                            show:false
+                        },
+                        axisLine:{
+                            show:false
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'技能',
+                        type:'bar',
+                        data:[9, 8, 8],
+                        barMaxWidth : 26,//柱图宽度
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    position:'right',
+                                    textStyle: {
+                                        color: '#800080'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+
+            var option2 = {
+                title : {
+                    text: data.title,
+                    subtext: data.subtext
+                },
+                tooltip : {
+                    trigger: 'item'
+                },
+                //数据标题
+                legend: {
+                    data:data.mainSkill.title
+                },
+//        右上保存工具
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        restore : {show: true},
+//                saveAsImage : {show: true}
+                    }
+                },
+//        雷达图
+                polar : [
+                    {
+                        indicator : [
+                            { text : '使用' },
+                            { text : '用法' },
+                            { text : '原理' },
+                        ],
+//                位置
+                        center : [document.getElementById('mychart2').offsetWidth - 250, 225],
+                        radius : 100
+                    }
+                ],
+                calculable : false,
+//        数据
+                series : [
+                    {
+                        name:data.title,
+                        type:'pie',
+                        radius : [0, 100],
+                        center: [250, 225],
+                        data: [
+                            {name:data.mainSkill.title[0],value:data.mainSkill.value[0]},
+                            {name:data.mainSkill.title[1],value:data.mainSkill.value[1]},
+                            {name:data.mainSkill.title[2],value:data.mainSkill.value[2]},
+                        ]
+                    },
+
+                ]
+            }
+//             使用刚指定的配置项和数据显示图表。
+            myChart2.setOption(option2);
+            var option3={
+                title:{
+                    text: data.title,
+                    subtext: data.subtext
+                },
+                series:[
+                    {
+                        name: 'radar',
+                        type: 'radar',
+//                polarIndex : 1,
+                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                        data:data.subSkill['javascript']
+                    }
+                ],
+                tooltip : {
+                    trigger: 'item'
+                },
+                //数据标题
+                legend: {
+                    data:data.mainSkill.title
+                },
+//        右上保存工具
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        restore : {show: true},
+//                saveAsImage : {show: true}
+                    }
+                },
+//        雷达图
+                polar : [
+                    {
+                        indicator : [
+                            { text : '使用' },
+                            { text : '用法' },
+                            { text : '原理' },
+                        ],
+//                位置
+                        center : [document.getElementById('mychart2').offsetWidth - 250, 225],
+                        radius : 100
+                    }
+                ],
+                calculable : false,
+//        数据
+            }
+        }
+
+    })
+    function eConsole(param) {
+        console.log(param);
+        console.log(param.dataIndex);
+//        var mes = '【' + param.type + '】';
+//        if (typeof param.seriesIndex != 'undefined') {
+//            mes += '  seriesIndex : ' + param.seriesIndex;
+//            mes += '  dataIndex : ' + param.dataIndex;
+//        }
+//        if (param.type == 'hover') {
+//            document.getElementById('hover-console').innerHTML = 'Event Console : ' + mes;
+//        }
+//        else {
+//            document.getElementById('console').innerHTML = mes;
+//        }
+    }
+    myChart2.on('CLICK', eConsole);
+</script>
+</body>
+</html>

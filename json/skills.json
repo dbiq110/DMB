@@ -1,0 +1,31 @@
+ {
+    "title": "前端",
+    "subtext": "前端技术",
+    "mainSkill":{
+      "title":["javascript","css","html"],
+      "value":[80,86,85]
+    },
+    "subSkill":{
+      "javascript":[
+        {"name":"jquery","value1":90,"value":[76,60,87]},
+        {"name":"bootstrap","value1":80,"value":[70,66,78]},
+        {"name":"angular","value1":70,"value":[66,70,67]},
+        {"name":"nodejs","value1":50,"value":[55,55,57]}
+      ],
+      "css":[
+        {"name":"css3","value1":80,"value":[76,70,87]},
+        {"name":"canvas","value1":75,"value":[86,70,87]},
+        {"name":"less","value1":80,"value":[80,70,87]},
+        {"name":"Animate","value1":70,"value":[76,70,87]},
+        {"name":"echart","value1":70,"value":[76,70,87]}
+      ],
+      "html":[
+        {"name":"html5","value1":85,"value":[86,80,87]}
+      ]
+    },
+   "sSkill":{
+     "title":[],
+     "value":[]
+   }
+  }
+

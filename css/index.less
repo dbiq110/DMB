@@ -4,10 +4,11 @@
 
 /*导航条样式设计*/
 body{
-  height: 100%;
-  overflow: hidden;
+  //height: 100%;
+  //overflow: hidden;
   width: 100%;
-  color:@baseColor
+  color:@baseColor;
+  background-color: #777;
 }
 .myNav{
   position: fixed;
@@ -21,10 +22,15 @@ body{
 
   .container{
     .navbar-header{
+
+      //@media screen and (max-width: 768px){
+      //  width: 200px;
+      //}
       >h1.H1title{
         text-indent: -99999px;
         position: absolute;
       }
+
       .myBrand{
         //background: rgba(68,55,28,.7);
         height: 100%;
@@ -44,6 +50,8 @@ body{
         font-size: 20px;
         line-height: 40px;
         margin-left: 10px;
+        float:left;
+        //float:left;
         @media screen and (min-width: 768px){
           font-size: 30px;
           line-height: 78px;
@@ -88,20 +96,23 @@ body{
   //width: 100%;
   //position: fixed;
   //z-index: 9;
-  height: 100%;
-
+  //height: 100%;
+  >.fp-section{
+    //height: 15%;
+    //height: 100%;
+  }
   >.fp-section:nth-of-type(1){
+    padding-top: 90px;
     position: relative;
     background:url("../images/section1_2.jpg") no-repeat center;
+    background-size: cover;
     >.introduction{
       >.myAvatar{
+        //头像距离顶部高度设置
 
-        padding-top: 100px;
         .myBox{
-          //width: 80%;
           margin:0 auto;
           border-radius: 10px;
-          //background-color: rgba(10, 10, 0, 0.5);
           width: 50%;
           height: 350px;
           @media screen and (max-width: 768px){
@@ -116,28 +127,29 @@ body{
             //border:1px solid #ccc;
             //background-color: #ccc;
           }
-          >.nameBox{
-            width: 280px;
-            margin:0 auto;
-            >.myName{
-              font-size: 24px;
-              text-align: left;
-              font-weight: 700;
-              //color: #775D67;
-              color: @baseColor;
-
-              &:hover{
-                font-size: 30px;
-                border-bottom: 1px solid #fff;
-
-              }
-              >span{
-                //color: #f82;
-                text-align: right;
-                color: #fff;
-              }
-            }
-          }
+          /*姓名盒子,暂时废弃*/
+          //>.nameBox{
+          //  width: 280px;
+          //  margin:0 auto;
+          //  >.myName{
+          //    font-size: 24px;
+          //    text-align: left;
+          //    font-weight: 700;
+          //    //color: #775D67;
+          //    color: @baseColor;
+          //
+          //    &:hover{
+          //      font-size: 30px;
+          //      border-bottom: 1px solid #fff;
+          //
+          //    }
+          //    >span{
+          //      //color: #f82;
+          //      text-align: right;
+          //      color: #fff;
+          //    }
+          //  }
+          //}
         }
       }
       >.s1_title{
@@ -174,6 +186,7 @@ body{
       text-align: center;
       //padding-bottom: 80px;
       height: 100%;
+      width: 94%;
       @media screen and (min-width: 768px) {
         margin-top: 100px;
         margin-bottom:100px;
@@ -203,7 +216,7 @@ body{
             }
           }
         }
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 767px){
           //padding-top: 10px;
           height: 10%;
           >h3{
@@ -222,16 +235,40 @@ body{
   }
   /*技能掌握样式*/
   >.fp-section:nth-of-type(3){
+    position: relative;
+    padding-top: 80px;
     background:url("../images/xia_bg2.jpg") no-repeat center;
     background-size: cover;
+    //height: 100%;
+    >#mychart2{
+      height: 100%;
+      width: 100%;
+    }
+    @media screen and (max-width: 768px){
+      padding-top:15%;
+    }
 
+    >.skillDecs{
+      position: absolute;
+      right:10%;
+      top: 120px;
+      //width: 230%;
+      height: 30%;
+      color:#fff;
+      background-color: @boxColor;
+      padding: 20px;
+      border-radius: 10px;
+      color:@baseColor;
+    }
   }
   >.fp-section:nth-of-type(4){
+    padding-top: 80px;
     background:url("../images/section2_big.jpg") no-repeat center;
     background-size: cover;
 
   }
   >.fp-section:nth-of-type(5){
+    padding-top: 80px;
     background:url("../images/section3.jpg") no-repeat center;
     background-size: cover;
   }

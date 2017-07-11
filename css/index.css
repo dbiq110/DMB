@@ -1,9 +1,8 @@
 /*��������ʽ����*/
 body {
-  height: 100%;
-  overflow: hidden;
   width: 100%;
   color: #28c7ff;
+  background-color: #777;
 }
 .myNav {
   position: fixed;
@@ -39,6 +38,7 @@ body {
   font-size: 20px;
   line-height: 40px;
   margin-left: 10px;
+  float: left;
 }
 @media screen and (min-width: 768px) {
   .myNav .container .navbar-header > .nav_jianli {
@@ -65,16 +65,14 @@ body {
 /*Ʈ������Ҷ������Ч*/
 #sectionContent {
   /*��ҳ��ʽ����*/
-  height: 100%;
   /*���˾�����ʽ*/
   /*����������ʽ*/
 }
 #sectionContent > .fp-section:nth-of-type(1) {
+  padding-top: 90px;
   position: relative;
   background: url("../images/section1_2.jpg") no-repeat center;
-}
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar {
-  padding-top: 100px;
+  background-size: cover;
 }
 #sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox {
   margin: 0 auto;
@@ -82,6 +80,7 @@ body {
   width: 50%;
   height: 350px;
   /*ͷ������*/
+  /*��������,��ʱ����*/
 }
 @media screen and (max-width: 768px) {
   #sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox {
@@ -92,24 +91,6 @@ body {
 #sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > #avatar {
   margin: 0 auto;
   width: 240px;
-}
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox {
-  width: 280px;
-  margin: 0 auto;
-}
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox > .myName {
-  font-size: 24px;
-  text-align: left;
-  font-weight: 700;
-  color: #28c7ff;
-}
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox > .myName:hover {
-  font-size: 30px;
-  border-bottom: 1px solid #fff;
-}
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > .nameBox > .myName > span {
-  text-align: right;
-  color: #fff;
 }
 #sectionContent > .fp-section:nth-of-type(1) > .introduction > .s1_title {
   margin-top: -100px;
@@ -143,6 +124,7 @@ body {
   margin-bottom: 0px;
   text-align: center;
   height: 100%;
+  width: 94%;
 }
 @media screen and (min-width: 768px) {
   #sectionContent > .fp-section:nth-of-type(2) > .experience {
@@ -173,7 +155,7 @@ body {
     font-size: 16px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #sectionContent > .fp-section:nth-of-type(2) > .experience > .myBox {
     height: 10%;
   }
@@ -188,14 +170,38 @@ body {
   color: #fff;
 }
 #sectionContent > .fp-section:nth-of-type(3) {
+  position: relative;
+  padding-top: 80px;
   background: url("../images/xia_bg2.jpg") no-repeat center;
   background-size: cover;
 }
+#sectionContent > .fp-section:nth-of-type(3) > #mychart2 {
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #sectionContent > .fp-section:nth-of-type(3) {
+    padding-top: 15%;
+  }
+}
+#sectionContent > .fp-section:nth-of-type(3) > .skillDecs {
+  position: absolute;
+  right: 10%;
+  top: 120px;
+  height: 30%;
+  color: #fff;
+  background-color: rgba(10, 10, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  color: #28c7ff;
+}
 #sectionContent > .fp-section:nth-of-type(4) {
+  padding-top: 80px;
   background: url("../images/section2_big.jpg") no-repeat center;
   background-size: cover;
 }
 #sectionContent > .fp-section:nth-of-type(5) {
+  padding-top: 80px;
   background: url("../images/section3.jpg") no-repeat center;
   background-size: cover;
 }

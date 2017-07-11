@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<div id="mychart" style="width: 1000px;height:500px;"></div>-->
+<!--<div id="mychart3" style="width: 1000px;height:500px;"></div>-->
+<div id="mychart2" style="width: 100%;height: 680px;"></div>
+<!--<script src="js/require.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script>
+//    var myChart = echarts.init(document.getElementById('mychart'));
+    var myChart2 = echarts.init(document.getElementById('mychart2'));
+//获取目标对象数组里每个对象某个属性的值,并返回数组
+function getObjValue(arr,sel){
+    var res=arr.map(function(v){
+        return v[sel];
+    })
+    return res;
+}
+//获取目标数组
+function getAvgArr(arr){
+    var res=arr.map(function(v){
+        var sum=0;
+        for(var i=0;i< v.length;i++){
+            sum+=v[i]
+        }
+        var avg=Math.round(sum/ v.length);
+        return avg;
+    })
+    return res;
+}
+    $.ajax({
+        type:'get',
+        url:'./json/mySkills.json',
+        success: function (data) {
+            var jsDataName=getObjValue(data,'name')
+            var jsDataVals=getObjValue(data,'value')
+            var jsDataVal=getAvgArr(jsDataVals);
+            console.log(jsDataVal);
+            var option2 = {
+                _init:function(option){
+
+                },
+                title : {
+                    text: "个人技能",
+                    subtext: ""
+                },
+//                提示框
+                tooltip : {
+                    trigger: 'item'
+                },
+                legend: {
+                    x : 'center',
+//                    data:['某软件','某主食手机','某水果手机','降水量','蒸发量']
+                },
+//        雷达图
+                polar : [
+                    {
+                        indicator : [
+                            { text : '使用' ,max:100},
+                            { text : '用法' ,max:100},
+                            { text : '原理' ,max:100},
+                        ],
+//                位置
+                        center : ['83.33%%', '40%'],
+                        radius : 110
+                    }
+                ],
+                series : [
+                    {
+                        name: 'radar',
+                        type: 'radar',
+                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                        data: [jsDataVals[2],jsDataVals[5]]
+                    },
+                    {
+                        name:'技能',
+                        type:'bar',
+                        data:jsDataVal,
+                        barMaxWidth : 22,//柱图宽度
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    position:'right',
+                                    textStyle: {
+                                        color: '#800080'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                //柱形图的样式
+                grid: {
+                    y:'5%',
+                    width:'60%',
+                    height:'60%'
+                },
+                xAxis : [
+                    {
+                        type : 'value',
+                        show:false,
+
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'category',
+                        data :jsDataName,
+                        axisTick:{
+                            show:false
+                        },
+                        axisLine:{
+                            show:false
+                        }
+                    }
+                ],
+            }
+//             使用刚指定的配置项和数据显示图表。
+            myChart2.setOption(option2);
+            myChart2.on(ecConfig.EVENT.CLICK, eConsole);
+            function eConsole(param) {
+                var mes = '【' + param.type + '】';
+                if (typeof param.seriesIndex != 'undefined') {
+                    mes += '  seriesIndex : ' + param.seriesIndex;
+                    mes += '  dataIndex : ' + param.dataIndex;
+                }
+                if (param.type == 'hover') {
+                    document.getElementById('hover-console').innerHTML = 'Event Console : ' + mes;
+                }
+                else {
+                    document.getElementById('console').innerHTML = mes;
+                }
+                console.log(param);
+            }
+        }
+
+    })
+
+</script>
+</body>
+</html>

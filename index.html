@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="罗宇灏 简历 个人网站 介绍 工作">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="screen-orientation" content="portrait">
     <title>Locky 罗宇灏 简历 个人网站 介绍</title>
     <link rel="stylesheet" href="./css/fullpage.css"/>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -51,14 +53,16 @@
         <div class="container introduction">
             <div class="myAvatar">
                 <div class="myBox">
-                    <div id="avatar" class="hidden-xs">
-                        <img src="images/myAvatar_04.png" width="100%" alt=""/>
+                    <!-- 大屏幕显示的摇头头像,移动端隐藏-->
+                    <div id="avatar" class="hidden-xs hidden-sm">
+                        <!--<img src="images/myAvatar_04.png" width="100%" alt=""/>-->
                     </div>
-                    <div class="nameBox">
+                    <!-- 姓名盒子,暂时废弃-->
+                    <!--<div class="nameBox">-->
                             <!--<p class="myName">英文名:<span class="cnName">Locky</span></p>-->
                             <!--<p class="myName">姓&emsp;名:<span class="cnName">罗宇灏</span></p>-->
                             <!--<p class="myName">职&emsp;业:<span class="cnName">前端工程师</span></p>-->
-                    </div>
+                    <!--</div>-->
                 </div>
             </div>
             <!--<p class="myText">个人信息:男 籍贯:广东广州 民族:汉</p>-->
@@ -66,6 +70,7 @@
             <!--<p class="myText">专业学历:信息管理与信息系统</p>-->
             <!--<p class="myText">联系方式:手机:18813759355 QQ:735614908</p>-->
             <h2 class="s1_title">
+                <!-- 颜色差异-->
                 <span>前端</span>攻城狮
             </h2>
             <div class="textBox">
@@ -169,45 +174,47 @@
     </div>
     <div class="fp-section" id="page_2">
         <!--掌握技能-->
-        <ul>
-            <li>前端</li>
-            <li>java</li>
-            <li>.net</li>
-        </ul>
-        <!--前端基础知识-->
-        <ul>
-            <li>html:95%</li>
-            <li>css:90%</li>
-            <li>javascript:85%</li>
-        </ul>
-        <!-- css方面的技能-->
-        <ul>
-            <li>less:80%</li>
-            <li>css3:85%</li>
-            <li>canvas:70%</li>
-            <li>konva:70%</li>
-            <li>echart:70%</li>
-        </ul>
-        <!--js框架-->
-        <ul>
-            <li>jquery:90%</li>
-            <li>bootstrap:85%</li>
-            <li>angular:75%</li>
-            <li>vue:65%</li>
-            <li>nodejs:50%</li>
-        </ul>
-        <!-- 编程思想-->
-        <ul>
-            <li>oop</li>
-            <li>mvc</li>
-            <li>mvvm</li>
-        </ul>
-        <!-- 其他-->
-        <ul>
-            <li>git</li>
-            <li>npm</li>
-            <li>gulp</li>
-        </ul>
+        <div id="mychart2" class="col-xs-12 col-sm-6"></div>
+        <div class="skillDecs hidden-xs hidden-sm col-md-3"></div>
+        <!--<ul>-->
+            <!--<li>前端</li>-->
+            <!--<li>java</li>-->
+            <!--<li>.net</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash;前端基础知识&ndash;&gt;-->
+        <!--<ul>-->
+            <!--<li>html:95%</li>-->
+            <!--<li>css:90%</li>-->
+            <!--<li>javascript:85%</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash; css方面的技能&ndash;&gt;-->
+        <!--<ul>-->
+            <!--<li>less:80%</li>-->
+            <!--<li>css3:85%</li>-->
+            <!--<li>canvas:70%</li>-->
+            <!--<li>konva:70%</li>-->
+            <!--<li>echart:70%</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash;js框架&ndash;&gt;-->
+        <!--<ul>-->
+            <!--<li>jquery:90%</li>-->
+            <!--<li>bootstrap:85%</li>-->
+            <!--<li>angular:75%</li>-->
+            <!--<li>vue:65%</li>-->
+            <!--<li>nodejs:50%</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash; 编程思想&ndash;&gt;-->
+        <!--<ul>-->
+            <!--<li>oop</li>-->
+            <!--<li>mvc</li>-->
+            <!--<li>mvvm</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash; 其他&ndash;&gt;-->
+        <!--<ul>-->
+            <!--<li>git</li>-->
+            <!--<li>npm</li>-->
+            <!--<li>gulp</li>-->
+        <!--</ul>-->
     </div>
     <div class="fp-section" id="page_3">
         <!--作品展示-->
@@ -239,12 +246,16 @@
         </ul>
     </div>
 </div>
+<!--<script src="js/require.js"></script>-->
+<!--<script src="config.js"></script>-->
 <script src="./js/jquery.min.js"></script>
 <script src="./js/fullpage.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src='./js/leaveSence.js'></script>
+<script src="js/echarts.min.js"></script>
 <script src="./js/myShake.js"></script>
     <script>
+
 //        var data=[
 //            {"title":"2013年9月懵懂的我来到大学","content":"当年的也有过热血盈眶的时候,参加了两个大学社团(主要负责活动的策划与组织)"},
 //            {"title":"2014年9月对小游戏感兴趣","content":"曾听高中的老师说上了大学就可以尽情的放松了,因此开始了主修lol的课程,期间也玩过各种各样的小游戏,感觉开发那些的人真的好厉害啊!能够开发出如febblybird 切西瓜 微信打飞机等轻量级小游戏."},
@@ -256,6 +267,7 @@
 //            {"title":"2017年3月--至今学习前端流行框架","content":"过年之前公司老板也让我在去了解ajax和bootstrap,真的代码是靠敲出来的,不敲永远也学不会;那时我就在网站看了一下资料,感觉还是能够使用的,期间就使用ajax写一下毕设的获取数据方式,但是bootstrap没有实际使用过,等真正到公司负责开发一个后台系统的时候,发现bootstrap真的很多控件,很多类名,并且还要与ajax一起使用,最后完成这个后台页面我整整用了一个月,在后面的日子,我负责公司的一个响应式的网站,还通过各种渠道学习了一些流行框架,也了解了node.js"},
 //            {"title":"未来展望--学习nodejs/coco2dx.js","content":"希望在未来的一年里可以加深所学的知识,如果有机会有选择java/node.js一门后台语言加深造诣,往全栈工程师发展;另外业余的时间会去学习coco2dx.js,实现我长久的梦想----自己制作属于自己的游戏,未完待续....."}
 //            ]
+window.onload=function(){
     (function(){
 //        初始化页面特效与fullpage
         fullpage.init('#sectionContent',{
@@ -274,6 +286,21 @@
             beforeSlideLeave: null,      // slide 离开事件
 //        controller:true
         });
+        var totalHight=document.body.offsetHeight
+        console.log(totalHight);
+//        $('.fp-section').each(function(i,v){
+//           $(this).css('height',$('#sectionContent').height());
+//        })
+        window.onresize=function(){
+            var totalHight=document.body.offsetHeight
+            console.log(totalHight);
+            $('.fp-section').eq(0).css('height',totalHight)
+            $('.fp-section').eq(1).css('height',totalHight)
+            $('.fp-section').eq(2).css('height',totalHight)
+            $('.fp-section').eq(3).css('height',totalHight)
+            $('.fp-section').eq(4).css('height',totalHight)
+        }
+
         var navs=$('.nav li');
         navs.each(function(i,v){
             $(v).on('click',function(){
@@ -289,7 +316,7 @@
     document.oncontextmenu= function(e){
         var e = e || window.event;
         if(e.button == "2"){ //判断是否是右键
-                             //……你的代码……
+            //……你的代码……
             $('.modal').modal('toggle')
 //            alert("右击事件");
             return false;
@@ -313,6 +340,245 @@
     $('#sectionContent .myName').on('click',function(){
         alert(123);
     })
+//        个人经历
+    var myChart2 = echarts.init(document.getElementById('mychart2'));
+//获取目标对象数组里每个对象某个属性的值,并返回数组
+    function getObjValue(arr,sel){
+        var res=arr.map(function(v){
+            return v[sel];
+        })
+        return res;
+    }
+//获取目标数组
+    function getAvgArr(arr){
+        var res=arr.map(function(v){
+            var sum=0;
+            for(var i=0;i< v.length;i++){
+                sum+=v[i]
+            }
+            var avg=Math.round(sum/ v.length);
+            return avg;
+        })
+        return res;
+    }
+    $.ajax({
+        type:'get',
+        url:'./json/mySkills.json',
+        success: function (data) {
+            data.reverse();
+            var jsDataName=getObjValue(data,'name')
+            var jsDataVals=getObjValue(data,'value')
+            var jsDataDecs=getObjValue(data,'decs')
+            var jsDataVal=getAvgArr(jsDataVals);
+
+//             使用刚指定的配置项和数据显示图表。
+            var decs=document.querySelector(".skillDecs")
+            if(window.innerWidth<=768){
+                option2={
+                    _init:function(option){
+
+                    },
+                    title : {
+                        text: "个人技能",
+//                subtext: ""
+                        show:false
+                    },
+//                提示框
+                    tooltip : {
+                        trigger: 'item'
+                    },
+                    legend: {
+                        x : 'center',
+                    },
+                    series : [
+                        {
+                            name:'技能',
+                            type:'bar',
+                            data:jsDataVal,
+                            barMaxWidth : 44,//柱图宽度
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: true,
+                                        position:'right',
+                                        textStyle: {
+                                            color: '#ff9'//
+                                        }
+                                    },
+                                    barBorderRadius:5,
+                                    color:'rgba(10, 10, 0, 0.5)'//柱状图的颜色
+                                }
+                            }
+                        }
+                    ],
+                    //柱形图的样式
+                    grid: {
+                        x:'24%',
+                        y:'0%',
+                        width:'70%',
+                        height:'100%',
+                        backgroundColor:'rbga(255,255,255,0)'
+                    },
+                    xAxis : [
+                        {
+                            type : 'value',
+                            show:false,
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'category',
+                            data :jsDataName,
+                            axisTick:{
+                                show:false
+                            },
+                            axisLine:{
+                                show:false
+                            },
+                            axisLabel:{
+                                textStyle:{
+                                    color:"#28c7ff",//条形图标签颜色
+                                    fontWeight:'400',
+                                    fontSize:'12'
+                                }
+                            }
+                        }
+                    ],
+                }
+                myChart2.setOption(option2);
+            }else if(window.innerWidth>768){
+                var option2 = {
+                    _init:function(option){
+
+                    },
+                    title : {
+                        text: "个人技能",
+//                subtext: ""
+                        show:false
+                    },
+//                提示框
+                    tooltip : {
+                        trigger: 'item'
+                    },
+                    legend: {
+                        x : 'center',
+                    },
+//        雷达图
+                    polar : [
+                        {
+                            name:{
+                                textStyle: {
+                                    //设置颜色
+                                    color:'#FF0000'//修改雷达图的颜色
+                                }
+                            },
+                            indicator : [
+                                { text : '使用' ,max:110},
+                                { text : '用法' ,max:110},
+                                { text : '原理' ,max:110},
+                            ],
+//                位置
+                            center : ['77%', '74%'],
+                            radius : '30%',
+                            splitLine:{
+                                show:true
+                            },
+
+                        }
+                    ],
+
+                    series : [
+                        {
+                            name: "radar",
+                            type: 'radar',
+//                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                            data: [123],
+                            itemStyle:{
+                                normal:{
+//                                label:{show:true}
+                                    areaStyle:{color:'#28c7ff',},
+                                    lineWidth:0
+                                },
+                                emphasis:{label:{show:true}}
+                            },
+                            areaStyle: {
+//                        color: ['#A7D282', '#FFF57F', '#FFF57F', '#EF856F','#A7D282']
+                            },
+                            symbolSize:0,
+                        },
+                        {
+                            name:'技能',
+                            type:'bar',
+                            data:jsDataVal,
+                            barMaxWidth : '40',//柱图宽度
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: true,
+                                        position:'right',
+                                        textStyle: {
+                                            color: '#ff9'//
+                                        }
+                                    },
+                                    barBorderRadius:5,
+                                    color:'rgba(10, 10, 0, 0.6)'//柱状图的颜色
+                                }
+                            }
+                        }
+                    ],
+                    //柱形图的样式
+                    grid: {
+                        x:'15%',
+                        y:'0%',
+                        width:'50%',
+                        height:'100%',
+                        backgroundColor:'rbga(255,255,255,0)'
+                    },
+                    xAxis : [
+                        {
+                            type : 'value',
+                            show:false,
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'category',
+                            data :jsDataName,
+                            axisTick:{
+                                show:false
+                            },
+                            axisLine:{
+                                show:false
+                            },
+                            axisLabel:{
+                                textStyle:{
+                                    color:"#ff9",//条形图标签颜色
+                                    fontWeight:'400',
+                                    fontSize:'20'
+                                }
+                            }
+                        }
+                    ],
+                }
+                myChart2.setOption(option2);
+                myChart2.on("MOUSEOVER", showRader);
+            }
+
+
+            function showRader(param){
+                if(param.seriesType=="radar") return false;
+                option2.series[0].data=[jsDataVals[param.dataIndex]]
+                option2.series[0].name=[jsDataName[param.dataIndex]]
+                decs.innerHTML=[jsDataDecs[param.dataIndex]]
+//                console.log(param);
+                myChart2.setOption(option2);
+//                console.log(param.dataIndex);
+            }
+        }
+
+    })
+}
+
     </script>
 </body>
 </html>

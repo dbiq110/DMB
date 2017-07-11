@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.min.js"></script>
+    <div id="qinggan" style="width: 1000px;height:400px;"></div>
+    <div id="bar" style="width: 1000px;height:400px;"></div>
+<ul>
+    <li>前端</li>
+    <li>java</li>
+    <li>.net</li>
+</ul>
+<!--前端基础知识-->
+<ul>
+    <li>html:95%</li>
+    <li>css:90%</li>
+    <li>javascript:85%</li>
+</ul>
+<!-- css方面的技能-->
+<ul>
+    <li>less:80%</li>
+    <li>css3:85%</li>
+    <li>canvas:70%</li>
+    <li>konva:70%</li>
+    <li>echart:70%</li>
+</ul>
+<!--js框架-->
+<ul>
+    <li>jquery:90%</li>
+    <li>bootstrap:85%</li>
+    <li>angular:75%</li>
+    <li>vue:65%</li>
+    <li>nodejs:50%</li>
+</ul>
+<!-- 编程思想-->
+<ul>
+    <li>oop</li>
+    <li>mvc</li>
+    <li>mvvm</li>
+</ul>
+<!-- 其他-->
+<ul>
+    <li>git</li>
+    <li>npm</li>
+    <li>gulp</li>
+</ul>
+<script>
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('qinggan'));
+    var myChart2 = echarts.init(document.getElementById('bar'));
+    option = {
+        title : {
+            text: '某站点用户访问来源',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient : 'vertical',
+            x : 'left',
+            data:[]
+//            '直接访问','邮件营销','联盟广告','视频广告','搜索引擎'
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel'],
+                    option: {
+                        funnel: {
+                            x: '25%',
+                            width: '50%',
+                            funnelAlign: 'left',
+                            max: 1548
+                        }
+                    }
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '55%'],
+                data:[
+//                    {value:335, name:'直接访问'},
+//                    {value:310, name:'邮件营销'},
+//                    {value:234, name:'联盟广告'},
+//                    {value:135, name:'视频广告'},
+//                    {value:1548, name:'搜索引擎'}
+                ]
+            }
+        ]
+    };
+    myChart.hideLoading();
+    myChart.setOption(option);
+    option2 = {
+        title : {
+            text: '某地区蒸发量和降水量',
+            subtext: '纯属虚构'
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['项目数']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : []
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'项目',
+                type:'bar',
+                data:[],
+            },
+
+        ]
+    };
+    //情感分析图
+    $.ajax({
+        type: "get",
+        async: true, //同步执行
+        url: "tets.json",
+        dataType: "json", //返回数据形式为json
+        success: function(data){
+            console.log(data.object[0].length);
+            for(var i= 0,len=data.object[0].length;i<len;i++){
+                var json={};
+                var data2=data.object[0];
+                json.name=data.object[0][i];
+                json.value=data.object[1][i];
+                option.series[0].data[i]=json;
+                option.legend.data=data.object[0];
+                option2.xAxis[0].data=data.object[0];
+                option2.series[0].data=data.object[1];
+            }
+            myChart.clear();
+            myChart.hideLoading();
+            myChart.setOption(option);
+            myChart2.clear();
+            myChart2.hideLoading();
+            myChart2.setOption(option2);// 使用刚指定的配置项和数据显示图表。
+        },
+        error: function(errorMsg) {
+            alert("图表请求数据失败啦!");
+        }
+    });
+    // 指定图表的配置项和数据
+
+
+
+    var lastIndex = 5;
+    var axisData;
+    clearInterval(timeTicket);
+    var timeTicket = setInterval(function (){
+        lastIndex += 1;
+        // 动态数据接口 addData
+        myChart.addData([
+            [
+                0,        // 系列索引
+                {         // 新增数据
+                    name: '随机数据' + lastIndex,
+                    value: Math.round(Math.random()*10)
+                },
+                false,     // 新增数据是否从队列头部插入
+                false,     // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+                '随机数据' + lastIndex
+            ],
+            [
+                1,        // 系列索引
+                {         // 新增数据
+                    name: 'data' + lastIndex,
+                    value: [
+                        Math.round(Math.random()*100),
+                        Math.round(Math.random()*100),
+                        Math.round(Math.random()*100),
+                        Math.round(Math.random()*100),
+                        Math.round(Math.random()*100)
+                    ]
+                },
+                false,     // 新增数据是否从队列头部插入
+                false      // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+            ]
+        ]);
+    }, 2000);
+</script>
+</body>
+</html>
