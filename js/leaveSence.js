@@ -5,7 +5,7 @@
         this.leaves = [];
 
         this.options = {
-            numLeaves: 5,
+            numLeaves: 15,
             wind: {
                 magnitude: 1.2,
                 maxSpeed: 12,

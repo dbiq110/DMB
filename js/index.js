@@ -13,14 +13,16 @@ window.onload=function(){
                 $('.nav li').eq(afterIndex-1).siblings().removeClass('active');
                 $('.nav li').eq(afterIndex-1).addClass('active');
                 $('.myLeaf').css("background-image","url('./images/leaf"+afterIndex+".png')");
+                if(afterIndex==3){
+                    afterLoadInThree();
+                }
             },            // 页面载入事件，具体查看下面的 afterLoad 函数
             beforeLeave: null,           // 页面离开事件，具体查看下面的 beforeLeave 函数
             afterSlideLoad: null,       // slide 载入事件
             beforeSlideLeave: null,      // slide 离开事件
-//        controller:true
         });
         var totalHight=document.body.offsetHeight
-        console.log(totalHight);
+        //console.log(totalHight);
 //        $('.fp-section').each(function(i,v){
 //           $(this).css('height',$('#sectionContent').height());
 //        })
@@ -46,10 +48,7 @@ window.onload=function(){
         leaves.init();
         leaves.render();
     })()
-    function getInfo(){
-
-    }
-    var info=
+    //个人信息按钮js代码
     $("#myInfo_1").on("click",function(){
         console.log(123);
         layer.open({
@@ -67,36 +66,38 @@ window.onload=function(){
                     +'\<\div style="padding:10px 0 0 20px;">联系电话:18813759355\<\/div>'
                     +'\<\div style="padding:10px 0 0 20px;">邮箱:a735614908@gmail.com\<\/div>'
                     +'\<\/div>'
-
         });
     })
-    document.oncontextmenu= function(e){
-        var e = e || window.event;
-        if(e.button == "2"){ //判断是否是右键
-            //……你的代码……
-            $('.modal').modal('toggle')
-//            alert("右击事件");
-            return false;
-        }
-        return true;
-    }
+    //右键模态框
+//    document.oncontextmenu= function(e){
+//        var e = e || window.event;
+//        if(e.button == "2"){ //判断是否是右键
+//            //……你的代码……
+//            $('.modal').modal('toggle')
+////            alert("右击事件");
+//            return false;
+//        }
+//        return true;
+//    }
+    //
+    //摇头
+    //第四页摇头js代码
     var avatar=new creatMyAvatar({
         url:'images/myAvatar3.png',
         width:240,
         height:180
     })
     $('#avatar').html(avatar.showMYAvatar());
-    $('.navbar-toggle').on('click',function(){
-        console.log(123);
-    })
+    //$('.navbar-toggle').on('click',function(){
+    //    console.log(123);
+    //})
     //要使用touch事件
     $('.navbar-toggle').on('touchend',function(){
         $('.xs_nva').slideToggle();
     })
-    console.log($('#page1'));
-    $('#sectionContent .myName').on('click',function(){
-        alert(123);
-    })
+    //$('#sectionContent .myName').on('click',function(){
+    //    alert(123);
+    //})
 //        个人经历
     var myChart2 = echarts.init(document.getElementById('mychart2'));
 //获取目标对象数组里每个对象某个属性的值,并返回数组
@@ -118,223 +119,225 @@ window.onload=function(){
         })
         return res;
     }
-    $.ajax({
-        type:'get',
-        url:'./json/mySkills.json',
-        success: function (data) {
-            data.reverse();
-            var jsDataName=getObjValue(data,'name')
-            var jsDataVals=getObjValue(data,'value')
-            var jsDataDecs=getObjValue(data,'decs')
-            var jsDataVal=getAvgArr(jsDataVals);
+    function afterLoadInThree(){
+        $.ajax({
+            type:'get',
+            url:'./json/mySkills.json',
+            success: function (data) {
+                data.reverse();
+                var jsDataName=getObjValue(data,'name')
+                var jsDataVals=getObjValue(data,'value')
+                var jsDataDecs=getObjValue(data,'decs')
+                var jsDataVal=getAvgArr(jsDataVals);
 
 //             使用刚指定的配置项和数据显示图表。
-            var decs=document.querySelector(".skillDecs")
-            if(window.innerWidth<=768){
-                option2={
-                    _init:function(option){
+                var decs=document.querySelector(".skillDecs")
+                if(window.innerWidth<=768){
+                    option2={
+                        _init:function(option){
 
-                    },
-                    title : {
-                        text: "个人技能",
+                        },
+                        title : {
+                            text: "个人技能",
 //                subtext: ""
-                        show:false
-                    },
+                            show:false
+                        },
 //                提示框
-                    tooltip : {
-                        trigger: 'item'
-                    },
-                    legend: {
-                        x : 'center',
-                    },
-                    series : [
-                        {
-                            name:'技能',
-                            type:'bar',
-                            data:jsDataVal,
-                            barMaxWidth : 44,//柱图宽度
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: true,
-                                        position:'right',
-                                        textStyle: {
-                                            color: '#ff9'//
-                                        }
-                                    },
-                                    barBorderRadius:5,
-                                    color:'rgba(10, 10, 0, 0.5)'//柱状图的颜色
+                        tooltip : {
+                            trigger: 'item'
+                        },
+                        legend: {
+                            x : 'center',
+                        },
+                        series : [
+                            {
+                                name:'技能',
+                                type:'bar',
+                                data:jsDataVal,
+                                barMaxWidth : 44,//柱图宽度
+                                itemStyle: {
+                                    normal: {
+                                        label: {
+                                            show: true,
+                                            position:'right',
+                                            textStyle: {
+                                                color: '#ff9'//
+                                            }
+                                        },
+                                        barBorderRadius:5,
+                                        color:'rgba(10, 10, 0, 0.5)'//柱状图的颜色
+                                    }
                                 }
                             }
-                        }
-                    ],
-                    //柱形图的样式
-                    grid: {
-                        x:'24%',
-                        y:'0%',
-                        width:'70%',
-                        height:'100%',
-                        backgroundColor:'rbga(255,255,255,0)'
-                    },
-                    xAxis : [
-                        {
-                            type : 'value',
-                            show:false,
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'category',
-                            data :jsDataName,
-                            axisTick:{
-                                show:false
-                            },
-                            axisLine:{
-                                show:false
-                            },
-                            axisLabel:{
-                                textStyle:{
-                                    color:"#28c7ff",//条形图标签颜色
-                                    fontWeight:'400',
-                                    fontSize:'12'
+                        ],
+                        //柱形图的样式
+                        grid: {
+                            x:'24%',
+                            y:'0%',
+                            width:'70%',
+                            height:'100%',
+                            backgroundColor:'rbga(255,255,255,0)'
+                        },
+                        xAxis : [
+                            {
+                                type : 'value',
+                                show:false,
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'category',
+                                data :jsDataName,
+                                axisTick:{
+                                    show:false
+                                },
+                                axisLine:{
+                                    show:false
+                                },
+                                axisLabel:{
+                                    textStyle:{
+                                        color:"#28c7ff",//条形图标签颜色
+                                        fontWeight:'400',
+                                        fontSize:'12'
+                                    }
                                 }
                             }
-                        }
-                    ],
-                }
-                myChart2.setOption(option2);
-            }else if(window.innerWidth>768){
-                var option2 = {
-                    _init:function(option){
+                        ],
+                    }
+                    myChart2.setOption(option2);
+                }else if(window.innerWidth>768){
+                    var option2 = {
+                        _init:function(option){
 
-                    },
-                    title : {
-                        text: "个人技能",
+                        },
+                        title : {
+                            text: "个人技能",
 //                  subtext: ""
-                        show:false
-                    },
+                            show:false
+                        },
 //                  提示框
-                    tooltip : {
-                        trigger: 'item'
-                    },
-                    legend: {
-                        x : 'center',
-                    },
+                        tooltip : {
+                            trigger: 'item'
+                        },
+                        legend: {
+                            x : 'center',
+                        },
 //                  雷达图
-                    polar : [
-                        {
-                            name:{
-                                textStyle: {
-                                    //设置颜色
-                                    color:'#000000'//修改雷达图的颜色
-                                }
-                            },
-                            indicator : [
-                                { text : '使用' ,max:110},
-                                { text : '用法' ,max:110},
-                                { text : '原理' ,max:110},
-                            ],
+                        polar : [
+                            {
+                                name:{
+                                    textStyle: {
+                                        //设置颜色
+                                        color:'#000000'//修改雷达图的颜色
+                                    }
+                                },
+                                indicator : [
+                                    { text : '使用' ,max:110},
+                                    { text : '用法' ,max:110},
+                                    { text : '原理' ,max:110},
+                                ],
 //                  位置
-                            center : ['77%', '74%'],
-                            radius : '30%',
-                            splitLine:{
-                                show:true
-                            },
+                                center : ['77%', '74%'],
+                                radius : '30%',
+                                splitLine:{
+                                    show:true
+                                },
 
-                        }
-                    ],
+                            }
+                        ],
 
-                    series : [
-                        {
-                            name: "radar",
-                            type: 'radar',
+                        series : [
+                            {
+                                name: "radar",
+                                type: 'radar',
 //                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
-                            data: [123],
-                            itemStyle:{
-                                normal:{
+                                data: [123],
+                                itemStyle:{
+                                    normal:{
 //                                label:{show:true}
 //                                    areaStyle:{color:'#28c7ff',},
-                                    areaStyle:{color:'#ff9'},
-                                    lineWidth:0
-                                },
-                                emphasis:{label:{show:true}}
-                            },
-                            areaStyle: {
-//                        color: ['#A7D282', '#FFF57F', '#FFF57F', '#EF856F','#A7D282']
-                            },
-                            symbolSize:0,
-                        },
-                        {
-                            name:'技能',
-                            type:'bar',
-                            data:jsDataVal,
-                            barMaxWidth : '40',//柱图宽度
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: true,
-                                        position:'right',
-                                        textStyle: {
-                                            color: '#ff9'//
-                                        }
+                                        areaStyle:{color:'#ff9'},
+                                        lineWidth:0
                                     },
-                                    barBorderRadius:5,
-                                    color:'rgba(10, 10, 0, 0.6)'//柱状图的颜色
+                                    emphasis:{label:{show:true}}
+                                },
+                                areaStyle: {
+//                        color: ['#A7D282', '#FFF57F', '#FFF57F', '#EF856F','#A7D282']
+                                },
+                                symbolSize:0,
+                            },
+                            {
+                                name:'技能',
+                                type:'bar',
+                                data:jsDataVal,
+                                barMaxWidth : '40',//柱图宽度
+                                itemStyle: {
+                                    normal: {
+                                        label: {
+                                            show: true,
+                                            position:'right',
+                                            textStyle: {
+                                                color: '#ff9'//
+                                            }
+                                        },
+                                        barBorderRadius:5,
+                                        color:'rgba(10, 10, 0, 0.6)'//柱状图的颜色
+                                    }
                                 }
                             }
-                        }
-                    ],
-                    //柱形图的样式
-                    grid: {
-                        x:'15%',
-                        y:'0%',
-                        width:'50%',
-                        height:'100%',
-                        backgroundColor:'rbga(255,255,255,0)'
-                    },
-                    xAxis : [
-                        {
-                            type : 'value',
-                            show:false,
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'category',
-                            data :jsDataName,
-                            axisTick:{
-                                show:false
-                            },
-                            axisLine:{
-                                show:false
-                            },
-                            axisLabel:{
-                                textStyle:{
-                                    //color:"#ff9",//条形图标签颜色
-                                    color:"#fff",//条形图标签颜色
-                                    fontWeight:'400',
-                                    fontSize:'20'
+                        ],
+                        //柱形图的样式
+                        grid: {
+                            x:'15%',
+                            y:'0%',
+                            width:'50%',
+                            height:'100%',
+                            backgroundColor:'rbga(255,255,255,0)'
+                        },
+                        xAxis : [
+                            {
+                                type : 'value',
+                                show:false,
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'category',
+                                data :jsDataName,
+                                axisTick:{
+                                    show:false
+                                },
+                                axisLine:{
+                                    show:false
+                                },
+                                axisLabel:{
+                                    textStyle:{
+                                        //color:"#ff9",//条形图标签颜色
+                                        color:"#fff",//条形图标签颜色
+                                        fontWeight:'400',
+                                        fontSize:'20'
+                                    }
                                 }
                             }
-                        }
-                    ],
+                        ],
+                    }
+                    myChart2.setOption(option2);
+                    myChart2.on("MOUSEOVER", showRader);
                 }
-                myChart2.setOption(option2);
-                myChart2.on("MOUSEOVER", showRader);
-            }
 
 
-            function showRader(param){
-                if(param.seriesType=="radar") return false;
-                option2.series[0].data=[jsDataVals[param.dataIndex]]
-                option2.series[0].name=[jsDataName[param.dataIndex]]
-                decs.innerHTML=[jsDataDecs[param.dataIndex]]
+                function showRader(param){
+                    if(param.seriesType=="radar") return false;
+                    option2.series[0].data=[jsDataVals[param.dataIndex]]
+                    option2.series[0].name=[jsDataName[param.dataIndex]]
+                    decs.innerHTML=[jsDataDecs[param.dataIndex]]
 //                console.log(param);
-                myChart2.setOption(option2);
+                    myChart2.setOption(option2);
 //                console.log(param.dataIndex);
+                }
             }
-        }
 
-    })
+        })
+    }
 
 }
