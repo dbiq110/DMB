@@ -7,11 +7,11 @@
   {"name":"bootstrap","value":[83,60,95],"title":"简洁、直观、强悍、移动设备优先的前端开发框","decs":"能够通过文档编写以栅格系统为布局方式的响应式网页,同时兼容PC段与移动"},
   {"name":"canvas","value":[77,70,90],"title":"一个css3的新特性","decs":"使用canvas画出简单的图形,坐标系,扇形图,方形图,折线图等,能使用canvas截取图片,制作简单精灵图人物移动"},
   {"name":"less","value":[90,70,99],"title":"一个css样式的编程工具","decs":"能够使用less开发出整齐的css样式,并能简单使用里面内置方法,如计算方法,声明变量"},
-  {"name":"Animate","value":[80,80,95],"title":"一个封装了css特性animate动画的框架","decs":"能够使用animate框架实现页面的特效"},
-  {"name":"echart","value":[70,70,70],"title":"由百度团队开发的一个基于canvas的框架","decs":"能够根据开档开发出数据可视图化样式"},
-  {"name":"angularjs","value":[80,66,70],"title":"一个MVVC编程思想的javascript框架","decs":"能够熟练使用常用的指令,编写模板把数据渲染到页面,过滤器,路由等"},
-  {"name":"nodejs","value":[50,50,50],"title":"一个基于js开发的后台"},
-  {"name":"art-template","value":[95,90,70],"title":"一个模板引擎","decs":"能够配合jQ异步获取到数据,通过模板引擎把数据渲染到页面上"},
+  {"name":"Animate","value":[80,80,95],"title":"一个封装了css特性animate动画的框架","decs":"能够使用animate框架实现页面简单的淡入淡出等特效,丰富页面效果"},
+  {"name":"vue","value":[70,70,70],"title":"一个mvvm的js框架","decs":"能够实现数据双向绑定,页面路由,数据请求等功能,能够配合webpack构建工具完成项目的构建"},
+  {"name":"angularjs","value":[80,66,70],"title":"一个MVVC编程思想的javascript框架","decs":"能够熟练使用常用的指令,编写模板把数据渲染到页面,合理过滤器,路由等"},
+  {"name":"nodejs","value":[50,50,50],"title":"一个基于js开发的后台","decs":"能够使用express简单编写一个node后台,完成页面的路由与数据库的CRUD,能够使用websocket编写一个简单的实时聊天室"},
+  {"name":"移动App","value":[75,74,71],"title":"混合式App开发","decs":"能够实现移动web页面到移动app文件的封装."},
   {"name":"java","value":[76,70,77],"title":"一门面向对象编程语言","decs":"理解java的基础知识,能够使用servlet编写一个服务器,实现对myServer数据库的增删改查"},
   {"name":"php","value":[69,70,80],"title":"一种创建动态交互性站点的强有力的服务器端脚本语言","decs":"能读懂php的简单常用语法,能使用index.php作为路由获取站点"}
 ]

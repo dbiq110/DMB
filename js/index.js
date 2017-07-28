@@ -128,6 +128,7 @@ window.onload=function(){
                 var jsDataName=getObjValue(data,'name')
                 var jsDataVals=getObjValue(data,'value')
                 var jsDataDecs=getObjValue(data,'decs')
+                var jsDataTitle=getObjValue(data,'title')
                 var jsDataVal=getAvgArr(jsDataVals);
 
 //             使用刚指定的配置项和数据显示图表。
@@ -330,7 +331,8 @@ window.onload=function(){
                     if(param.seriesType=="radar") return false;
                     option2.series[0].data=[jsDataVals[param.dataIndex]]
                     option2.series[0].name=[jsDataName[param.dataIndex]]
-                    decs.innerHTML=[jsDataDecs[param.dataIndex]]
+                    decs.children[1].innerHTML=[jsDataDecs[param.dataIndex]]
+                    decs.children[0].innerHTML=[jsDataTitle[param.dataIndex]]
 //                console.log(param);
                     myChart2.setOption(option2);
 //                console.log(param.dataIndex);

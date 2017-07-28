@@ -187,9 +187,10 @@ body {
   height: 30%;
   color: #fff;
   background-color: rgba(10, 10, 0, 0.5);
-  padding: 20px;
   border-radius: 10px;
   text-indent: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #sectionContent > .fp-section:nth-of-type(4) {
   padding-top: 80px;
