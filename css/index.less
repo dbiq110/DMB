@@ -2,12 +2,13 @@
 @boxColor:rgba(10, 10, 0, 0.5);
 //@baseColor:#a69;
 
-/*µ¼º½ÌõÑùÊ½Éè¼Æ*/
+/*å¯¼èˆªæ¡æ ·å¼è®¾è®¡*/
 body{
   //height: 100%;
   //overflow: hidden;
   width: 100%;
   color:@baseColor;
+  overflow: hidden;
   background-color: #777;
 }
 .myNav{
@@ -63,6 +64,21 @@ body{
       >.nav{
         //height: 78px;
         //height: 100px;
+        .dropdown{
+          >a{
+            position: relative;
+            >img{
+              width: 100px;
+              display: none;
+              position: absolute;
+              left: 0;
+              top:80px;
+            }
+            &:hover>img{
+              display: block;
+            }
+          }
+        }
         >li{
           height: 100%;
         &:hover{
@@ -86,12 +102,12 @@ body{
     }
   }
 }
-/*Æ®ÎèµÄÊ÷Ò¶±³¾°ÌØĞ§*/
+/*é£˜èˆçš„æ ‘å¶èƒŒæ™¯ç‰¹æ•ˆ*/
 
 
 
 #sectionContent{
-  /*Ê×Ò³ÑùÊ½Éè¼Æ*/
+  /*é¦–é¡µæ ·å¼è®¾è®¡*/
   //position: relative;
   //width: 100%;
   //position: fixed;
@@ -107,53 +123,11 @@ body{
     background:url("../images/section1_2.jpg") no-repeat center;
     background-size: cover;
     >.introduction{
-      >.myAvatar{
-        //Í·Ïñ¾àÀë¶¥²¿¸ß¶ÈÉèÖÃ
 
-        .myBox{
-          margin:0 auto;
-          border-radius: 10px;
-          width: 50%;
-          height: 350px;
-          @media screen and (max-width: 768px){
-            width: 100%;
-            height:100%;
-          }
-          /*Í·ÏñÉè¼Æ*/
-          >#avatar{
-            margin:0 auto;
-            width: 240px;
-
-            //border:1px solid #ccc;
-            //background-color: #ccc;
-          }
-          /*ĞÕÃûºĞ×Ó,ÔİÊ±·ÏÆú*/
-          //>.nameBox{
-          //  width: 280px;
-          //  margin:0 auto;
-          //  >.myName{
-          //    font-size: 24px;
-          //    text-align: left;
-          //    font-weight: 700;
-          //    //color: #775D67;
-          //    color: @baseColor;
-          //
-          //    &:hover{
-          //      font-size: 30px;
-          //      border-bottom: 1px solid #fff;
-          //
-          //    }
-          //    >span{
-          //      //color: #f82;
-          //      text-align: right;
-          //      color: #fff;
-          //    }
-          //  }
-          //}
-        }
-      }
       >.s1_title{
-        margin-top: -100px;
+
+        //margin-top: -100px;
+        padding-top: 80px;
         font-size: 50px;
         >span{
           color:#FF9
@@ -176,7 +150,7 @@ body{
       }
     }
   }
-  /*¸öÈË¾­ÀúÑùÊ½*/
+  /*ä¸ªäººç»å†æ ·å¼*/
   >.fp-section:nth-of-type(2){
     background:url("../images/chun2._bg.jpg") no-repeat center;
     background-size: cover;
@@ -206,7 +180,7 @@ body{
           font-size: 20px;
 
           >h3{
-            //Ë®Æ½ÊúÖ±¾ÓÖĞ
+            //æ°´å¹³ç«–ç›´å±…ä¸­
             position: relative;
             left:50%;
             top: 50%;
@@ -233,7 +207,7 @@ body{
       }
     }
   }
-  /*¼¼ÄÜÕÆÎÕÑùÊ½*/
+  /*æŠ€èƒ½æŒæ¡æ ·å¼*/
   >.fp-section:nth-of-type(3){
     position: relative;
     padding-top: 80px;
@@ -258,23 +232,122 @@ body{
       background-color: @boxColor;
       padding: 20px;
       border-radius: 10px;
-      color:@baseColor;
+      text-indent: 2em;
+      //color:@baseColor;
     }
   }
   >.fp-section:nth-of-type(4){
     padding-top: 80px;
     background:url("../images/section2_big.jpg") no-repeat center;
     background-size: cover;
+      //å¤´åƒè·ç¦»é¡¶éƒ¨é«˜åº¦è®¾ç½®
+      .myBox{
+        //position: relative;
+        margin:0 auto;
+        border-radius: 10px;
+        width: 50%;
+        height: 250px;
+        @media screen and (max-width: 768px){
+          width: 100%;
+          height:100%;
+        }
+        /*å¤´åƒè®¾è®¡*/
+        >#avatar{
+          margin:0 auto;
+          width: 240px;
 
+          //border:1px solid #ccc;
+          //background-color: #ccc;
+        }
+    }
+    .container{
+      height: 80%;
+      .panel:nth-of-type(1){background: url("../images/program01.PNG") no-repeat center;}
+      .panel:nth-of-type(2){background: url("../images/program02.PNG") no-repeat center;}
+      .panel:nth-of-type(3){background: url("../images/program03.PNG") no-repeat center;}
+      .panel:nth-of-type(4){background: url("../images/program04.png") no-repeat center;}
+      .panel:nth-of-type(5){background: url("../images/program05.PNG") no-repeat center;}
+      .panel:nth-of-type(6){background: url("../images/program06.PNG") no-repeat center;}
+      @media screen and (min-width: 768px) and (max-width: 992px){
+        padding-top: 50px;
+      }
+      >.panel{
+        opacity: .9;
+        background-size: contain;
+        //background: url("../images/program01.PNG") no-repeat center;
+        color: #fff;
+        padding: 0px;
+        height: 28%;
+        //box-sizing: border-box;
+        //padding:0 10px;
+        .panel-heading{
+          background-color: @boxColor;
+        }
+        .panel-body{
+          color: #000;
+          height: 80%;
+          >span{
+            display: none;
+          }
+        }
+        &:hover{
+          opacity: 1;
+          >.panel-heading{
+            color:@baseColor;
+          }
+          >.panel-body{
+            //color:#ff9;
+            >span{
+              display: inline;
+            }
+          }
+        }
+      }
+
+    }
   }
   >.fp-section:nth-of-type(5){
     padding-top: 80px;
     background:url("../images/section3.jpg") no-repeat center;
     background-size: cover;
+    >.container{
+
+      .btn{
+        text-align: left;
+        width: 300px;
+        display: block;
+        margin: 20px auto;
+        border-radius: 30px;
+      }
+      .btn:nth-of-type(1){
+        background-color: #000;
+        color: #fff;
+      }
+      .btn:nth-of-type(2){
+        background-color: rgba(153, 0, 102, 0.8);
+        color: #fff;
+      }
+      .btn:nth-of-type(3){
+        background-color: rgba(189, 64, 64, 0.8);
+        color: #fff;
+      }
+      .btn:nth-of-type(4){
+        background-color: rgba(59, 89, 152, 0.8);
+        color: #fff;
+      }
+      .btn:nth-of-type(5){
+        background-color: rgba(51, 153, 102, 0.8);
+        color: #fff;
+      }
+    }
+    #buttomCode{
+      display: block;
+      margin:0 auto;
+    }
   }
 }
 
-/*fullpage¹öÆÁÑùÊ½Éè¼Æ*/
+/*fullpageæ»šå±æ ·å¼è®¾è®¡*/
 .fp-controller{
   .fp-controller-dotted{
     width: 15px;
@@ -283,7 +356,26 @@ body{
     background-color: rgba(255, 255, 255, .5);
   }
 }
-/*Æ®ÂäµÄÒ¶×ÓÑùÊ½Éè¼Æ*/
+#myInfo_1{
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  border-radius: 50%;
+  width: 50px;
+  background-color: #fff;
+  background: url("../images/me.jpg");
+  height: 50px;
+  background-size: 50px 50px;
+  padding: 0;
+  border: 0;
+
+  >img{
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+  }
+}
+/*é£˜è½çš„å¶å­æ ·å¼è®¾è®¡*/
 .myLeaf {
   position: fixed;
   top: 0;

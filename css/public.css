@@ -129,3 +129,6 @@ img {
 .icon-Git-:before {
   content: "\e62f";
 }
+.icon-weixin:before {
+  content: "\e620";
+}

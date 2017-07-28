@@ -1,7 +1,8 @@
-/*��������ʽ����*/
+/*导航条样式设计*/
 body {
   width: 100%;
   color: #28c7ff;
+  overflow: hidden;
   background-color: #777;
 }
 .myNav {
@@ -46,6 +47,19 @@ body {
     line-height: 78px;
   }
 }
+.myNav .container .navbar-collapse > .nav .dropdown > a {
+  position: relative;
+}
+.myNav .container .navbar-collapse > .nav .dropdown > a > img {
+  width: 100px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 80px;
+}
+.myNav .container .navbar-collapse > .nav .dropdown > a:hover > img {
+  display: block;
+}
 .myNav .container .navbar-collapse > .nav > li {
   height: 100%;
 }
@@ -62,11 +76,11 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   color: #28c7ff;
 }
-/*Ʈ������Ҷ������Ч*/
+/*飘舞的树叶背景特效*/
 #sectionContent {
-  /*��ҳ��ʽ����*/
-  /*���˾�����ʽ*/
-  /*����������ʽ*/
+  /*首页样式设计*/
+  /*个人经历样式*/
+  /*技能掌握样式*/
 }
 #sectionContent > .fp-section:nth-of-type(1) {
   padding-top: 90px;
@@ -74,26 +88,8 @@ body {
   background: url("../images/section1_2.jpg") no-repeat center;
   background-size: cover;
 }
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox {
-  margin: 0 auto;
-  border-radius: 10px;
-  width: 50%;
-  height: 350px;
-  /*ͷ������*/
-  /*��������,��ʱ����*/
-}
-@media screen and (max-width: 768px) {
-  #sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox {
-    width: 100%;
-    height: 100%;
-  }
-}
-#sectionContent > .fp-section:nth-of-type(1) > .introduction > .myAvatar .myBox > #avatar {
-  margin: 0 auto;
-  width: 240px;
-}
 #sectionContent > .fp-section:nth-of-type(1) > .introduction > .s1_title {
-  margin-top: -100px;
+  padding-top: 80px;
   font-size: 50px;
   color: #28c7ff;
   text-align: center;
@@ -193,26 +189,144 @@ body {
   background-color: rgba(10, 10, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
-  color: #28c7ff;
+  text-indent: 2em;
 }
 #sectionContent > .fp-section:nth-of-type(4) {
   padding-top: 80px;
   background: url("../images/section2_big.jpg") no-repeat center;
   background-size: cover;
 }
+#sectionContent > .fp-section:nth-of-type(4) .myBox {
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 50%;
+  height: 250px;
+  /*头像设计*/
+}
+@media screen and (max-width: 768px) {
+  #sectionContent > .fp-section:nth-of-type(4) .myBox {
+    width: 100%;
+    height: 100%;
+  }
+}
+#sectionContent > .fp-section:nth-of-type(4) .myBox > #avatar {
+  margin: 0 auto;
+  width: 240px;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container {
+  height: 80%;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container .panel:nth-of-type(1) {
+  background: url("../images/program01.PNG") no-repeat center;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container .panel:nth-of-type(2) {
+  background: url("../images/program02.PNG") no-repeat center;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container .panel:nth-of-type(3) {
+  background: url("../images/program03.PNG") no-repeat center;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container .panel:nth-of-type(4) {
+  background: url("../images/program04.png") no-repeat center;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container .panel:nth-of-type(5) {
+  background: url("../images/program05.PNG") no-repeat center;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container .panel:nth-of-type(6) {
+  background: url("../images/program06.PNG") no-repeat center;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #sectionContent > .fp-section:nth-of-type(4) .container {
+    padding-top: 50px;
+  }
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel {
+  opacity: .9;
+  background-size: contain;
+  color: #fff;
+  padding: 0px;
+  height: 28%;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel .panel-heading {
+  background-color: rgba(10, 10, 0, 0.5);
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel .panel-body {
+  color: #000;
+  height: 80%;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel .panel-body > span {
+  display: none;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel:hover {
+  opacity: 1;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel:hover > .panel-heading {
+  color: #28c7ff;
+}
+#sectionContent > .fp-section:nth-of-type(4) .container > .panel:hover > .panel-body > span {
+  display: inline;
+}
 #sectionContent > .fp-section:nth-of-type(5) {
   padding-top: 80px;
   background: url("../images/section3.jpg") no-repeat center;
   background-size: cover;
 }
-/*fullpage������ʽ����*/
+#sectionContent > .fp-section:nth-of-type(5) > .container .btn {
+  text-align: left;
+  width: 300px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 30px;
+}
+#sectionContent > .fp-section:nth-of-type(5) > .container .btn:nth-of-type(1) {
+  background-color: #000;
+  color: #fff;
+}
+#sectionContent > .fp-section:nth-of-type(5) > .container .btn:nth-of-type(2) {
+  background-color: rgba(153, 0, 102, 0.8);
+  color: #fff;
+}
+#sectionContent > .fp-section:nth-of-type(5) > .container .btn:nth-of-type(3) {
+  background-color: rgba(189, 64, 64, 0.8);
+  color: #fff;
+}
+#sectionContent > .fp-section:nth-of-type(5) > .container .btn:nth-of-type(4) {
+  background-color: rgba(59, 89, 152, 0.8);
+  color: #fff;
+}
+#sectionContent > .fp-section:nth-of-type(5) > .container .btn:nth-of-type(5) {
+  background-color: rgba(51, 153, 102, 0.8);
+  color: #fff;
+}
+#sectionContent > .fp-section:nth-of-type(5) #buttomCode {
+  display: block;
+  margin: 0 auto;
+}
+/*fullpage滚屏样式设计*/
 .fp-controller .fp-controller-dotted {
   width: 15px;
   height: 15px;
   margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.5);
 }
-/*Ʈ����Ҷ����ʽ����*/
+#myInfo_1 {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  border-radius: 50%;
+  width: 50px;
+  background-color: #fff;
+  background: url("../images/me.jpg");
+  height: 50px;
+  background-size: 50px 50px;
+  padding: 0;
+  border: 0;
+}
+#myInfo_1 > img {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
+}
+/*飘落的叶子样式设计*/
 .myLeaf {
   position: fixed;
   top: 0;

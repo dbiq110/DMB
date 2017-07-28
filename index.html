@@ -18,6 +18,7 @@
     <![endif]-->
     </head>
 <body>
+
 <nav class="navbar navbar-default myNav">
     <div class="container">
         <div class="navbar-header">
@@ -32,8 +33,6 @@
             <a class="navbar-brand myBrand" href="#"><img src="images/MyLogo_02.png" alt="" height="100%"/></a>
             <span class="navbar-default nav_jianli">简&emsp;历</span>
             <h1 class="H1title">罗宇灏 locky</h1>
-            <!--<span class="navbar-brand nav_jianli">前端工程师</span>-->
-            <!--<span>吃得苦中苦,方为人上人</span>-->
         </div>
         <div class="collapse navbar-collapse xs_nva" id="bbbb">
             <ul class="nav navbar-nav navbar-right">
@@ -41,7 +40,7 @@
                 <li><a class="icon-res myFont" href="javascript:;">个人经历</a></li>
                 <li><a class="icon-anquanlvzhi myFont" href="javascript:;">掌握技能</a></li>
                 <li><a href="javascript:;" class="myFont icon-shejizuopin">作品展示</a></li>
-                <li class="dropdown"><a href="javascript:;" class="myFont icon-shouji">联系方式</a></li>
+                <li class="dropdown"><a href="javascript:;" class="myFont icon-shouji">联系方式 <img class="hidden-sm" src="./images/mycode_03.gif" alt=""/></a></li>
             </ul>
         </div>
     </div>
@@ -54,9 +53,9 @@
             <div class="myAvatar">
                 <div class="myBox">
                     <!-- 大屏幕显示的摇头头像,移动端隐藏-->
-                    <div id="avatar" class="hidden-xs hidden-sm">
-                        <!--<img src="images/myAvatar_04.png" width="100%" alt=""/>-->
-                    </div>
+                    <!--<div id="avatar" class="hidden-xs hidden-sm">-->
+                        <!--&lt;!&ndash;<img src="images/myAvatar_04.png" width="100%" alt=""/>&ndash;&gt;-->
+                    <!--</div>-->
                     <!-- 姓名盒子,暂时废弃-->
                     <!--<div class="nameBox">-->
                             <!--<p class="myName">英文名:<span class="cnName">Locky</span></p>-->
@@ -133,7 +132,7 @@
                 <!--</p>-->
             </div>
             <div class="myBox col-lg-4 col-sm-4 col-xs-12">
-                <h3><p>2016年9月</p>开始前端的实习</h3>
+                <h3><p>2016年7月</p>开始前端的实习</h3>
                 <!--<p class=" hidden-xs">-->
                     <!--这个学期我们学校已经开始要求写毕业论文了,课题也已经选好了,是医药管理信息系统,同时这个学期,-->
                     <!--有很多同学也已经出去找工作了,当然我也是坐不住了,通过表哥的介绍我去了一家it公司作为实习生进去,与其说是公司,-->
@@ -224,18 +223,86 @@
         <!--4.会移动的小人-->
         <!--5.毕业设计-->
         <!--6.angular项目-->
+        <div class="Avatar hidden-sm">
+            <div class="myBox">
+                <div id="avatar" class="hidden-xs hidden-sm">
+                    <img src="images/myAvatar_04.png" width="100%" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="panel panel-primary col-sm-6 col-lg-4">
+
+                <div class="panel-heading"><h3 class="panel-title">数立方的门户网站</h3></div>
+                <div class="panel-body">
+                    <!--<img src="./images/program03.PNG" alt=""/>-->
+                    <span>练习静态页面写的一个开源网站</span>
+                </div>
+            </div>
+            <div class="panel  col-sm-6 col-lg-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">打飞机游戏</h3>
+                </div>
+                <div class="panel-body">
+                    <span>以js面向过程思想写的模仿微信打飞机游戏</span>
+                </div>
+            </div>
+            <div class="panel  col-sm-6 col-lg-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">毕业设计--医药管理信息系统</h3>
+                </div>
+                <div class="panel-body">
+                    <span>大学毕业设计写的一个以java Serlet为后台的医药管理信息系统,主要用div+css布局完成简单的页面布局与数据请求，jquery完成数据请求</span>
+                </div>
+            </div>
+            <div class="panel  col-sm-6 col-lg-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">用angular仿写的商城购物网站</h3>
+                </div>
+                <div class="panel-body">
+                    <span>练习angularjs写的一个商品购物网站,简单完成了单页面跳转、数据请求、双向数据绑定等功能</span>
+                </div>
+            </div>
+            <div class="panel  col-sm-6 col-lg-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">可以上下左右移动的小人</h3>
+                </div>
+                <div class="panel-body">
+                    <span>通过集成了小人各种走动动作精灵图，使用canvas绘制且通过按键事件触发走动的会移动的小人。</span>
+                </div>
+            </div>
+            <div class="panel  col-sm-6 col-lg-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">用websocket写的一个即时聊天室</h3>
+                </div>
+                <div class="panel-body">
+                    <span>主要使用node中websocket服务器制作的一个公共聊天室，简单实现了即时聊天与人数统计功能</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="fp-section" id="page_4">
+        <div class="container">
+            <button class="icon-Git- myFont btn btn-lg">github:dbiq110</button>
+            <button class="icon-gmail myFont btn btn-lg">邮箱:735614908@qq.com</button>
+            <button class="icon-shouji myFont btn btn-lg">手机:18813759355</button>
+            <button class="icon-qq myFont btn btn-lg">QQ:735614908</button>
+            <button class="icon-weixin myFont btn btn-lg">微信</button>
+        </div>
         <!--联系方式-->
         <!--字体图标-->
         <!--github-->
         <!--qq-->
         <!--微信-->
         <!--微信二维码-->
-
+        <img id="buttomCode" src="./images/mycode_03.gif" alt=""/>
+        <!--<img src="./images/myAvatar_04.png" alt=""/>-->
     </div>
 </div>
-右键模态框
+<!--左下角个人信息-->
+<button id="myInfo_1" class="hidden-xs hidden-sm"></button>
+<!--<button id="myInfo_1"></button>-->
+<!--右键模态框-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-sm">
         <ul class="modal-content">
@@ -249,13 +316,14 @@
 <!--<script src="js/require.js"></script>-->
 <!--<script src="config.js"></script>-->
 <script src="./js/jquery.min.js"></script>
+<script src="./js/layer.js"></script>
 <script src="./js/fullpage.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src='./js/leaveSence.js'></script>
 <script src="js/echarts.min.js"></script>
 <script src="./js/myShake.js"></script>
+<script src="js/index.js"></script>
     <script>
-
 //        var data=[
 //            {"title":"2013年9月懵懂的我来到大学","content":"当年的也有过热血盈眶的时候,参加了两个大学社团(主要负责活动的策划与组织)"},
 //            {"title":"2014年9月对小游戏感兴趣","content":"曾听高中的老师说上了大学就可以尽情的放松了,因此开始了主修lol的课程,期间也玩过各种各样的小游戏,感觉开发那些的人真的好厉害啊!能够开发出如febblybird 切西瓜 微信打飞机等轻量级小游戏."},
@@ -267,318 +335,6 @@
 //            {"title":"2017年3月--至今学习前端流行框架","content":"过年之前公司老板也让我在去了解ajax和bootstrap,真的代码是靠敲出来的,不敲永远也学不会;那时我就在网站看了一下资料,感觉还是能够使用的,期间就使用ajax写一下毕设的获取数据方式,但是bootstrap没有实际使用过,等真正到公司负责开发一个后台系统的时候,发现bootstrap真的很多控件,很多类名,并且还要与ajax一起使用,最后完成这个后台页面我整整用了一个月,在后面的日子,我负责公司的一个响应式的网站,还通过各种渠道学习了一些流行框架,也了解了node.js"},
 //            {"title":"未来展望--学习nodejs/coco2dx.js","content":"希望在未来的一年里可以加深所学的知识,如果有机会有选择java/node.js一门后台语言加深造诣,往全栈工程师发展;另外业余的时间会去学习coco2dx.js,实现我长久的梦想----自己制作属于自己的游戏,未完待续....."}
 //            ]
-window.onload=function(){
-    (function(){
-//        初始化页面特效与fullpage
-        fullpage.init('#sectionContent',{
-            threshold: 130,              // 触发滚动事件的阈值，越小越灵敏
-            pageSpeed: 500,             // 滚屏速度，单位为毫秒 ms
-            autoScroll: 0,              // 自动播放时间间隔，如果为 0 则不自动播放，单位 ms
-            loopSection: false,          // Section循环滚动
-//        loopSlide: true,            // Slide循环滑动
-            afterLoad: function(afterIndex){
-                $('.nav li').eq(afterIndex-1).siblings().removeClass('active');
-                $('.nav li').eq(afterIndex-1).addClass('active');
-                $('.myLeaf').css("background-image","url('./images/leaf"+afterIndex+".png')");
-            },            // 页面载入事件，具体查看下面的 afterLoad 函数
-            beforeLeave: null,           // 页面离开事件，具体查看下面的 beforeLeave 函数
-            afterSlideLoad: null,       // slide 载入事件
-            beforeSlideLeave: null,      // slide 离开事件
-//        controller:true
-        });
-        var totalHight=document.body.offsetHeight
-        console.log(totalHight);
-//        $('.fp-section').each(function(i,v){
-//           $(this).css('height',$('#sectionContent').height());
-//        })
-        window.onresize=function(){
-            var totalHight=document.body.offsetHeight
-            console.log(totalHight);
-            $('.fp-section').eq(0).css('height',totalHight)
-            $('.fp-section').eq(1).css('height',totalHight)
-            $('.fp-section').eq(2).css('height',totalHight)
-            $('.fp-section').eq(3).css('height',totalHight)
-            $('.fp-section').eq(4).css('height',totalHight)
-        }
-
-        var navs=$('.nav li');
-        navs.each(function(i,v){
-            $(v).on('click',function(){
-                fullpage.moveTo(i+1,function(){
-                });
-            })
-        })
-        var leafContainer = document.querySelector('body'),
-                leaves = new LeafScene(leafContainer);
-        leaves.init();
-        leaves.render();
-    })()
-    document.oncontextmenu= function(e){
-        var e = e || window.event;
-        if(e.button == "2"){ //判断是否是右键
-            //……你的代码……
-            $('.modal').modal('toggle')
-//            alert("右击事件");
-            return false;
-        }
-        return true;
-    }
-    var avatar=new creatMyAvatar({
-        url:'images/myAvatar3.png',
-        width:240,
-        height:180
-    })
-    $('#avatar').html(avatar.showMYAvatar());
-    $('.navbar-toggle').on('click',function(){
-        console.log(123);
-    })
-    //要使用touch事件
-    $('.navbar-toggle').on('touchend',function(){
-        $('.xs_nva').slideToggle();
-    })
-    console.log($('#page1'));
-    $('#sectionContent .myName').on('click',function(){
-        alert(123);
-    })
-//        个人经历
-    var myChart2 = echarts.init(document.getElementById('mychart2'));
-//获取目标对象数组里每个对象某个属性的值,并返回数组
-    function getObjValue(arr,sel){
-        var res=arr.map(function(v){
-            return v[sel];
-        })
-        return res;
-    }
-//获取目标数组
-    function getAvgArr(arr){
-        var res=arr.map(function(v){
-            var sum=0;
-            for(var i=0;i< v.length;i++){
-                sum+=v[i]
-            }
-            var avg=Math.round(sum/ v.length);
-            return avg;
-        })
-        return res;
-    }
-    $.ajax({
-        type:'get',
-        url:'./json/mySkills.json',
-        success: function (data) {
-            data.reverse();
-            var jsDataName=getObjValue(data,'name')
-            var jsDataVals=getObjValue(data,'value')
-            var jsDataDecs=getObjValue(data,'decs')
-            var jsDataVal=getAvgArr(jsDataVals);
-
-//             使用刚指定的配置项和数据显示图表。
-            var decs=document.querySelector(".skillDecs")
-            if(window.innerWidth<=768){
-                option2={
-                    _init:function(option){
-
-                    },
-                    title : {
-                        text: "个人技能",
-//                subtext: ""
-                        show:false
-                    },
-//                提示框
-                    tooltip : {
-                        trigger: 'item'
-                    },
-                    legend: {
-                        x : 'center',
-                    },
-                    series : [
-                        {
-                            name:'技能',
-                            type:'bar',
-                            data:jsDataVal,
-                            barMaxWidth : 44,//柱图宽度
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: true,
-                                        position:'right',
-                                        textStyle: {
-                                            color: '#ff9'//
-                                        }
-                                    },
-                                    barBorderRadius:5,
-                                    color:'rgba(10, 10, 0, 0.5)'//柱状图的颜色
-                                }
-                            }
-                        }
-                    ],
-                    //柱形图的样式
-                    grid: {
-                        x:'24%',
-                        y:'0%',
-                        width:'70%',
-                        height:'100%',
-                        backgroundColor:'rbga(255,255,255,0)'
-                    },
-                    xAxis : [
-                        {
-                            type : 'value',
-                            show:false,
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'category',
-                            data :jsDataName,
-                            axisTick:{
-                                show:false
-                            },
-                            axisLine:{
-                                show:false
-                            },
-                            axisLabel:{
-                                textStyle:{
-                                    color:"#28c7ff",//条形图标签颜色
-                                    fontWeight:'400',
-                                    fontSize:'12'
-                                }
-                            }
-                        }
-                    ],
-                }
-                myChart2.setOption(option2);
-            }else if(window.innerWidth>768){
-                var option2 = {
-                    _init:function(option){
-
-                    },
-                    title : {
-                        text: "个人技能",
-//                subtext: ""
-                        show:false
-                    },
-//                提示框
-                    tooltip : {
-                        trigger: 'item'
-                    },
-                    legend: {
-                        x : 'center',
-                    },
-//        雷达图
-                    polar : [
-                        {
-                            name:{
-                                textStyle: {
-                                    //设置颜色
-                                    color:'#FF0000'//修改雷达图的颜色
-                                }
-                            },
-                            indicator : [
-                                { text : '使用' ,max:110},
-                                { text : '用法' ,max:110},
-                                { text : '原理' ,max:110},
-                            ],
-//                位置
-                            center : ['77%', '74%'],
-                            radius : '30%',
-                            splitLine:{
-                                show:true
-                            },
-
-                        }
-                    ],
-
-                    series : [
-                        {
-                            name: "radar",
-                            type: 'radar',
-//                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
-                            data: [123],
-                            itemStyle:{
-                                normal:{
-//                                label:{show:true}
-                                    areaStyle:{color:'#28c7ff',},
-                                    lineWidth:0
-                                },
-                                emphasis:{label:{show:true}}
-                            },
-                            areaStyle: {
-//                        color: ['#A7D282', '#FFF57F', '#FFF57F', '#EF856F','#A7D282']
-                            },
-                            symbolSize:0,
-                        },
-                        {
-                            name:'技能',
-                            type:'bar',
-                            data:jsDataVal,
-                            barMaxWidth : '40',//柱图宽度
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: true,
-                                        position:'right',
-                                        textStyle: {
-                                            color: '#ff9'//
-                                        }
-                                    },
-                                    barBorderRadius:5,
-                                    color:'rgba(10, 10, 0, 0.6)'//柱状图的颜色
-                                }
-                            }
-                        }
-                    ],
-                    //柱形图的样式
-                    grid: {
-                        x:'15%',
-                        y:'0%',
-                        width:'50%',
-                        height:'100%',
-                        backgroundColor:'rbga(255,255,255,0)'
-                    },
-                    xAxis : [
-                        {
-                            type : 'value',
-                            show:false,
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'category',
-                            data :jsDataName,
-                            axisTick:{
-                                show:false
-                            },
-                            axisLine:{
-                                show:false
-                            },
-                            axisLabel:{
-                                textStyle:{
-                                    color:"#ff9",//条形图标签颜色
-                                    fontWeight:'400',
-                                    fontSize:'20'
-                                }
-                            }
-                        }
-                    ],
-                }
-                myChart2.setOption(option2);
-                myChart2.on("MOUSEOVER", showRader);
-            }
-
-
-            function showRader(param){
-                if(param.seriesType=="radar") return false;
-                option2.series[0].data=[jsDataVals[param.dataIndex]]
-                option2.series[0].name=[jsDataName[param.dataIndex]]
-                decs.innerHTML=[jsDataDecs[param.dataIndex]]
-//                console.log(param);
-                myChart2.setOption(option2);
-//                console.log(param.dataIndex);
-            }
-        }
-
-    })
-}
-
     </script>
 </body>
 </html>
