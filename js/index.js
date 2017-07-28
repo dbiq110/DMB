@@ -3,6 +3,7 @@ window.onload=function(){
     (function(){
 
 //        初始化页面特效与fullpage
+        var threeIsOn=false;
         fullpage.init('#sectionContent',{
             threshold: 130,              // 触发滚动事件的阈值，越小越灵敏
             pageSpeed: 500,             // 滚屏速度，单位为毫秒 ms
@@ -13,7 +14,8 @@ window.onload=function(){
                 $('.nav li').eq(afterIndex-1).siblings().removeClass('active');
                 $('.nav li').eq(afterIndex-1).addClass('active');
                 $('.myLeaf').css("background-image","url('./images/leaf"+afterIndex+".png')");
-                if(afterIndex==3){
+                if(afterIndex==3&&!threeIsOn){
+                    threeIsOn=true;
                     afterLoadInThree();
                 }
             },            // 页面载入事件，具体查看下面的 afterLoad 函数
